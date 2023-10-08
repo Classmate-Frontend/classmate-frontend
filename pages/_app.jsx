@@ -8,7 +8,9 @@ import axios from "axios";
 import { PersistGate } from "redux-persist/integration/react";
 
 axios.defaults.baseURL =
-	process.env.NODE_ENV == "production" ? "" : "http://localhost:5000";
+	process.env.NODE_ENV == "production"
+		? "https://cyan-dibbler-wig.cyclic.app"
+		: "http://localhost:5000";
 
 export default function MyApp({ Component, pageProps }) {
 	const { store } = wrapper.useWrappedStore(pageProps);

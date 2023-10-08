@@ -1,0 +1,75 @@
+{
+	"env": {
+		"browser": true,
+		"node": true,
+		"es6": true
+	},
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		},
+		"react": {
+			"version": "detect"
+		}
+	},
+	"extends": [
+		"next/babel","next/core-web-vitals",
+		"eslint:recommended",
+		"plugin:import/errors",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:react/jsx-runtime",
+		"plugin:jsx-a11y/recommended",
+		"next/core-web-vitals"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react",
+		"import",
+		"jsx-a11y",
+		"simple-import-sort",
+		"react-hooks"
+	],
+	"rules": {
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"]
+	},
+	"overrides": [
+		{
+			"files": ["**/*.js", "**/*.ts", "**/*.tsx"],
+			"rules": {
+				"simple-import-sort/imports": [
+					"error",
+					{
+						"groups": [
+							// `react` first, `next` second, then packages starting with a character
+							["^react$", "^next", "^[a-z]"],
+							// Packages starting with `@`
+							["^@"],
+							// Packages starting with `~`
+							["^~"],
+							// Imports starting with `../`
+							["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+							// Imports starting with `./`
+							["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+							// Style imports
+							["^.+\\.s?css$"],
+							// Side effect imports
+							["^\\u0000"]
+						]
+					}
+				]
+			}
+		}
+	]
+}

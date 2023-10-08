@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+	.section-padding {
+		@apply px-6 md:px-10 xl:px-20 2xl:px-60
+	}
+
+	.link {
+		@apply no-underline hover:no-underline focus:no-underline visited:no-underline
+	}
+
+}
+
+
+@font-face {
+	font-family: 'georgia';
+	font-style: normal;
+	font-weight: normal;
+	src: local('georgia'), url('../public/fonts/georgia.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'georgia-italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('georgia-italic'), url('../public/fonts/georgiai.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'georgia-bold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('georgia-bold'), url('../public/fonts/georgiab.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'georgia-bold-italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('georgia-bold-italic'), url('../public/fonts/georgiaz.woff') format('woff');
+}
+
+.font-classmate {
+	font-family: 'georgia';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.font-classmate-bold {
+	font-family: 'georgia-bold';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.font-classmate-italic {
+	font-family: 'georgia-italic';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.font-classmate-bold-italic {
+	font-family: 'georgia-bold-italic';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.section-fade-in {
+	opacity: 0;
+	transform: translateY(100px);
+	animation: fade-in 1.2s forwards, slide-in 1.2s ease-out forwards;
+}
+
+// SVG color transformations
+.filter-classmate-green-1{
+	filter: invert(7%) sepia(20%) saturate(5146%) hue-rotate(91deg) brightness(95%) contrast(98%);
+}
+
+.filter-classmate-green-2{
+	filter: invert(6%) sepia(95%) saturate(6195%) hue-rotate(95deg) brightness(93%) contrast(84%);
+}
+
+.filter-classmate-green-3{
+	filter: invert(57%) sepia(5%) saturate(3331%) hue-rotate(60deg) brightness(94%) contrast(83%);
+}
+
+.filter-classmate-green-4{
+	filter: invert(91%) sepia(10%) saturate(713%) hue-rotate(55deg) brightness(81%) contrast(88%),
+}
+
+.filter-classmate-green-5{
+	filter: invert(89%) sepia(20%) saturate(503%) hue-rotate(50deg) brightness(99%) contrast(102%);
+}
+
+.filter-classmate-green-7{
+	filter: invert(33%) sepia(12%) saturate(711%) hue-rotate(65deg) brightness(98%) contrast(91%)
+}
+
+.filter-classmate-gray-4{
+	filter: invert(98%) sepia(7%) saturate(421%) hue-rotate(333deg) brightness(91%) contrast(88%);
+}
+
+
+.filter-classmate-gray-6{
+	filter: invert(99%) sepia(83%) saturate(586%) hue-rotate(296deg) brightness(109%) contrast(86%);
+}
+
+.filter-classmate-tan-1{
+	filter: invert(94%) sepia(15%) saturate(280%) hue-rotate(330deg) brightness(103%) contrast(87%);
+}
+
+.filter-classmate-tan-2{
+	filter: invert(92%) sepia(14%) saturate(348%) hue-rotate(318deg) brightness(108%) contrast(94%);
+}
+
+.filter-classmate-red-1{
+	filter: invert(33%) sepia(39%) saturate(1051%) hue-rotate(312deg) brightness(94%) contrast(100%);
+}
+
+.filter-classmate-red-error{
+	filter: invert(49%) sepia(38%) saturate(750%) hue-rotate(313deg) brightness(85%)
+}
+
+.filter-classmate-gold-1{
+	filter: invert(60%) sepia(95%) saturate(309%) hue-rotate(3deg) brightness(92%) contrast(87%);
+}
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.control_indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background: #DCD9CE;
+    border: 0px solid #000000;
+    border-radius: 4px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #dcd9ce;
+}
+
+.control input:checked ~ .control_indicator {
+    background: #d0a13d;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: #d0a13d;
+}
+.control input:disabled ~ .control_indicator {
+    background: #e8e5dc;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-checkbox .control_indicator:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid #F8F4EE;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+    border-color: #788473;
+}
+
+.fade-in{
+	animation: fade-in 100ms ease-in-out forwards;
+}
+
+.fade-out{
+	animation: fade-out 100ms ease-in-out forwards;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+} 
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+
+@keyframes slide-in {
+	from {
+		transform: translateY(100px);
+	}
+
+	to {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes snackbar {
+	0% {
+		opacity: 0;
+		transform: scale(0.75);
+	}
+
+	5% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	95% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform:  scale(0.75);
+	}
+}
+
+
+
+:root {
+	--classmate-green-1: #031E03;
+	--classmate-green-2: #144514;
+	--classmate-green-3: #699659;
+	--classmate-green-4: #A3BF98;
+	--classmate-green-5: #C8F9B1;
+	--classmate-green-6: #4D5E4A;
+	--classmate-green-7: #788473;
+	--classmate-gray-1: #848480;
+	--classmate-gray-2: #AFADAC;
+	--classmate-gray-3: #C7C9BF;
+	--classmate-gray-4: #DCD9CE;
+	--classmate-gray-5: #e8e5dc;
+	--classmate-gray-6: #edeae2;
+	--classmate-pink-1: #DA8088;
+	--classmate-gold-1: #D0A13D;
+	--classmate-tan-1: #EFEBDD;
+	--classmate-tan-2: #F8F4EE;
+	--classmate-red-1: #B43E3D;
+	--classmate-error-red: #d32f2f;
+	--classmate-hover-green-2: #2b662b;
+}

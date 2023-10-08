@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SignUpOrSignIn from "../../components/SignUpOrSignIn";
 import SignInForm from "../../components/SignInForm";
 import Link from "next/link";

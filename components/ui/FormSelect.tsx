@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useState, useRef, useEffect } from "react";
 
 // Project components

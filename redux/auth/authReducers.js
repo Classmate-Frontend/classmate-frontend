@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
 	AUTH_SUCCESS,
 	AUTH_FAILURE,

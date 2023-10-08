@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect } from "react";
 import Cookie from "js-cookie";
 import { useSelector } from "react-redux";

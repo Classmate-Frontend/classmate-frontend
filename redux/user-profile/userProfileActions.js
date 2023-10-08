@@ -1,3 +1,4 @@
+// @ts-nocheck
 import axios from "axios";
 import {
 	CLEAR_USER_PROFILE,

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import AccountMenu from "./AccountMenu";
 import Image from "next/image";

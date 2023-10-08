@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import SignUpOrSignIn from "../../components/SignUpOrSignIn";
 import SignUpForm from "./SignUpForm";

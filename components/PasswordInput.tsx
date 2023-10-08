@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useRef } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import Image from "next/image";

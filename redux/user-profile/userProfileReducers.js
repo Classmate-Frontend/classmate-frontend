@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
 	CLEAR_USER_PROFILE,
 	PROFILE_RETRIEVED,

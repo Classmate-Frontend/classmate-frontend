@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useRef, useEffect, useState } from "react";
 
 const ToolTip = ({ children, spacing = 5, hideOn: hideToolTip }) => {

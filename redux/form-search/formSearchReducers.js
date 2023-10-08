@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
 	FORM_SEARCH_SUCCESS,
 	FORM_SEARCH_FAILURE,

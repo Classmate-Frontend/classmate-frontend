@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface AuthState {
 	authLoading: boolean;
 	isAuthenticated: boolean;

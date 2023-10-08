@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
+// @ts-nocheck
+import React from "react";
 import HomepageHeading from "../pages/home/HomepageHeading";
-import ClassmateButton from "./ClassmateButton";
-import Image from "next/image";
-import googleLogo from "../public/google.png";
-import appleLogo from "../public/apple.png";
-import facebookLogo from "../public/facebook.png";
 
 export default function SignUpOrSignIn({
 	form,

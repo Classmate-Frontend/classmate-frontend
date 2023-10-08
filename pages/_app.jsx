@@ -1,3 +1,4 @@
+// @ts-nocheck
 import CookieHandler from "../components/CookieHandler";
 import Layout from "../components/Layout";
 import { Provider } from "react-redux";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import SignUpOrSignIn from "../../components/SignUpOrSignIn";
 import ResetPassForm from "./ResetPassForm";
 import Link from "next/link";

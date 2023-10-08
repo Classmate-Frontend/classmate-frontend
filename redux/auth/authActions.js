@@ -43,9 +43,9 @@ export const signUp =
 		} catch (err) {
 			if (err.response.data.message === "Email has been taken") {
 				dispatch(setAuthError("Email already in use"));
-			} else {
-				dispatch(setAuthError("Server error"));
 			}
+
+			dispatch(setAuthError("Server error"));
 			// Autherization attempt failed
 			dispatch(authFailure(err));
 		}

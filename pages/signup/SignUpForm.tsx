@@ -22,7 +22,6 @@ export default function SignUpForm() {
 	const dispatch = useDispatch();
 	const auth = useSelector((state) => state.auth);
 	const { width: windowWidth } = useWindowSize();
-	const [errorMessage, setErrorMessage] = useState("");
 
 	const methods = useForm({
 		defaultValues: {
@@ -43,7 +42,6 @@ export default function SignUpForm() {
 		if (!email.match(emailRegex)) {
 			setError("email");
 			dispatch(setAuthError("invalid email address"));
-			// setErrorMessage();
 			return true;
 		}
 		return false;

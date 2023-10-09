@@ -1,4 +1,4 @@
-var majors = [
+export default [
 	"Accountancy",
 	"Africana Studies",
 	"American Studies",

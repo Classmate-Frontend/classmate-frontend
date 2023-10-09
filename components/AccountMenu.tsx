@@ -109,7 +109,7 @@ const AccountMenu = () => {
 		: "bg-classmate-tan-1";
 
 	return (
-		<div className="relative !ml-auto">
+		<div className="relative !ml-auto ">
 			{/* ToolTip component */}
 			<ToolTip hideOn={menuOpen} spacing={10}>
 				<button

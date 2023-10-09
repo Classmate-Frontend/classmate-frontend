@@ -22,12 +22,12 @@ const Hero = (): JSX.Element => {
 	};
 
 	return (
-		<section className="section-padding relative flex h-screen min-h-[700px] w-full items-center justify-center bg-classmate-tan-1">
+		<section className="section-padding relative z-0 flex h-screen min-h-[700px] w-full items-center justify-center bg-classmate-tan-1">
 			<Image
 				src={icons.swinging}
 				width={0}
 				height={0}
-				className="pointer-events-none absolute left-0 top-0 h-48 w-auto lg:h-64 2xl:h-96"
+				className="pointer-events-none absolute left-0 top-0 h-48 w-auto lg:h-64 2xl:h-96 "
 				alt={"An illustration of a person happily swinging on a swing"}
 			/>
 			<Image

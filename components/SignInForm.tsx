@@ -57,6 +57,7 @@ export default function SignInForm() {
 	}
 
 	function onSubmit({ email, password }) {
+		email = email.toLowerCase();
 		const emailError = validateEmail(email);
 		const passwordError = validatePassword(password);
 

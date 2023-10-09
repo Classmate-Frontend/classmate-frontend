@@ -92,6 +92,7 @@ export default function SignUpForm() {
 	}
 
 	function onSubmit({ email, password, confirmPassword }) {
+		email = email.toLowerCase();
 		const passwordError = validatePassword(password);
 		const confirmPasswordError = validateConfirmPassword(
 			password,

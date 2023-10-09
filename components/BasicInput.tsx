@@ -64,8 +64,7 @@ const BasicInput: FC<InputProps> = ({
 					</span>
 
 					<input
-						autocomplete="chrome-off"
-						autocomplete="off"
+						autocomplete="new-password"
 						disabled={disabled}
 						onFocus={hanldeInputFocus}
 						onBlur={() => hanldeInputBlur(value)}

@@ -46,8 +46,7 @@ export default function PasswordInput({ name, label, rules, background }) {
 						</p>
 					</span>
 					<input
-						autocomplete="chrome-off"
-						autocomplete="off"
+						autocomplete="new-password"
 						type={showPassword ? "text" : "password"}
 						onFocus={hanldeInputFocus}
 						onBlur={() => hanldeInputBlur(value)}

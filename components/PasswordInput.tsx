@@ -61,7 +61,8 @@ export default function PasswordInput({ name, label, rules, background }) {
 					<button
 						onClick={handleClickShowPassword}
 						type="button"
-						className="absolute right-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-classmate-tan-2 transition-colors duration-300 ease-in-out hover:bg-classmate-gray-4">
+						tabIndex={-1}
+						className="absolute right-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-none bg-classmate-tan-2 outline-none ring-classmate-gold-1 transition-colors duration-300 ease-in-out hover:bg-classmate-gray-4 focus:ring">
 						<Image
 							height={0}
 							width={0}

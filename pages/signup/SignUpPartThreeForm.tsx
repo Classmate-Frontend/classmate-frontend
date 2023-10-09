@@ -25,7 +25,7 @@ export default function SignUpForm({ slideLeft, slideRight }) {
 	function generateYearArray() {
 		const currentYear = new Date().getFullYear();
 		const futureYear = currentYear + 10;
-		const yearArray = [];
+		const yearArray = ["N/A"];
 
 		for (let year = currentYear; year <= futureYear; year++) {
 			yearArray.push(year);

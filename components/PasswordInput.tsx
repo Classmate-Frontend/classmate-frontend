@@ -46,6 +46,7 @@ export default function PasswordInput({ name, label, rules, background }) {
 						</p>
 					</span>
 					<input
+						autocomplete="chrome-off"
 						autocomplete="off"
 						type={showPassword ? "text" : "password"}
 						onFocus={hanldeInputFocus}

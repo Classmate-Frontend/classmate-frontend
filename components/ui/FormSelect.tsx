@@ -264,6 +264,7 @@ const FormSelect: FC<InputProps> = ({
 						</p>
 					</span>
 					<input
+						autocomplete="chrome-off"
 						autocomplete="off"
 						id={name}
 						data-selectname={name}
@@ -321,6 +322,7 @@ const FormSelect: FC<InputProps> = ({
 										className="filter-classmate-green-4 mx-3 h-[20px] w-[20px]"
 									/>
 									<input
+										autocomplete="chrome-off"
 										autocomplete="off"
 										ref={searchRef}
 										value={localSearchValue}
@@ -347,6 +349,7 @@ const FormSelect: FC<InputProps> = ({
 										className="filter-classmate-green-4 mx-3 h-[20px] w-[20px]"
 									/>
 									<input
+										autocomplete="chrome-off"
 										autocomplete="off"
 										ref={searchRef}
 										value={databaseSearchValue || ""}

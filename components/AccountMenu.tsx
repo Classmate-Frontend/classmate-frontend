@@ -18,11 +18,58 @@ const AccountMenu = () => {
 	const router = useRouter();
 	const dispatch = useAppDispatch();
 	const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+	const userEmail = useSelector((state) => state.userProfile.userData?.email);
 	const [menuOpen, toggleMenuOpen] = useState(false);
 	const [menuItems, setMenuItems] = useState<MenuItem[]>([,]);
 
 	useEffect(() => {
-		if (isAuthenticated) {
+		const authorizedEmails = [
+			"christian.bourdeau94@gmail.com",
+			"alexis1895@gmail.com",
+			"censoredgreen@gmail.com",
+		];
+		const isAuthorizedForUserCount = authorizedEmails.includes(userEmail);
+		if (isAuthenticated && isAuthorizedForUserCount) {
+			// Add an additional menu item when authorized
+			setMenuItems([
+				{
+					icon: "/home-solid.svg",
+					label: "Home",
+					id: "home",
+					width: 20,
+					height: 20,
+					href: "/",
+					alt: "Home icon to go to the homepage",
+				},
+				{
+					icon: "/document-check-solid.svg",
+					label: "Dashboard",
+					id: "dashboard",
+					width: 20,
+					height: 20,
+					href: "/dashboard",
+					alt: "dashboard",
+				},
+				{
+					icon: "/lock-solid.svg",
+					label: "User Count",
+					id: "user-count",
+					width: 20,
+					height: 20,
+					href: "/view-number-registered",
+					alt: "lock icon",
+				},
+				{
+					icon: "/signout-solid.svg",
+					label: "Sign Out",
+					id: "sign-out",
+					width: 20,
+					height: 20,
+					href: "/signin",
+					alt: "Sign out icon to sign out of your account",
+				},
+			]);
+		} else if (isAuthenticated) {
 			setMenuItems([
 				{
 					icon: "/home-solid.svg",
@@ -83,7 +130,7 @@ const AccountMenu = () => {
 				},
 			]);
 		}
-	}, [isAuthenticated]);
+	}, [isAuthenticated, userEmail]);
 
 	const handleMenuClick = () => {
 		toggleMenuOpen((current) => !current); // Toggle the menu open state
@@ -103,7 +150,12 @@ const AccountMenu = () => {
 
 	// Check if current path should have a light or dark navbar
 	const pathname = router.asPath.split("/")[1];
-	const pagesWithDarkNavbar = ["", "signin", "signup"];
+	const pagesWithDarkNavbar = [
+		"",
+		"signin",
+		"signup",
+		"view-number-registered",
+	];
 	const bgColor = pagesWithDarkNavbar.includes(pathname)
 		? "bg-classmate-tan-2"
 		: "bg-classmate-tan-1";

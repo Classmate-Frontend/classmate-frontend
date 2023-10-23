@@ -64,7 +64,7 @@ export default function SignUp() {
 			slideRight={slideRight}>
 			<SignUpOrSignIn
 				heading="Sign Up"
-				subheading="Sign up to get access to insights and create your prefect semester."
+				subheading="Sign up to get access to insights and create your perfect semester."
 				form={<SignUpForm />}
 				variant="signup"
 			/>

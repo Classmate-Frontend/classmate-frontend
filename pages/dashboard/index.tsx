@@ -31,15 +31,16 @@ const Dashboard = () => {
 
 	return (
 		<div className="flex w-full justify-center bg-classmate-tan-1">
+			{/* Place the Tableau embed code here */}
 			<div
 				className="tableauPlaceholder"
-				id="viz1696714535929"
+				id="viz1697067005834"
 				style={{ position: "relative" }}>
 				<noscript>
 					<a href="#">
 						<img
-							alt="Dashboard 2"
-							src="https://public.tableau.com/static/images/TE/TESTDASHDONOTSHARE/Dashboard2/1_rss.png"
+							alt="Professor Picker Dash v2"
+							src="https://public.tableau.com/static/images/TE/TESTDASHDONOTSHARE/ProfessorPickerDashv2/1_rss.png"
 							style={{ border: "none" }}
 						/>
 					</a>
@@ -51,12 +52,12 @@ const Dashboard = () => {
 					<param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
 					<param name="embed_code_version" value="3" />
 					<param name="site_root" value="" />
-					<param name="name" value="TESTDASHDONOTSHARE/Dashboard2" />
+					<param name="name" value="TESTDASHDONOTSHARE/ProfessorPickerDashv2" />
 					<param name="tabs" value="no" />
 					<param name="toolbar" value="yes" />
 					<param
 						name="static_image"
-						value="https://public.tableau.com/static/images/TE/TESTDASHDONOTSHARE/Dashboard2/1.png"
+						value="https://public.tableau.com/static/images/TE/TESTDASHDONOTSHARE/ProfessorPickerDashv2/1.png"
 					/>
 					<param name="animate_transition" value="yes" />
 					<param name="display_static_image" value="yes" />

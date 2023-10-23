@@ -20,7 +20,6 @@ export default function Home() {
 				<meta property="og:image" content="/static/cover.png" />
 				<meta name="twitter:image" content="/static/cover.png" />
 			</Head>
-
 			<div className="h-full overflow-hidden">
 				<Hero />
 			</div>

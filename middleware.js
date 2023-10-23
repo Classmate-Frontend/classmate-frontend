@@ -17,8 +17,20 @@ export default function middleware(req) {
 	const requestingAccountPage = url.includes("/dashboard");
 	const requestingSignInOrSignUpPage =
 		url.includes("/signin") || url.includes("/signup");
-
 	const requestingResetPasswordPage = url.includes("/resetPass");
+
+	// Private route for Classmate team only
+	const requestingUserCountPage = url.includes("/view-number-registered");
+	const userEmail = cookies.get("userEmail")?.value;
+	const authorizedEmails = [
+		"christian.bourdeau94@gmail.com",
+		"alexis1895@gmail.com",
+		"censoredgreen@gmail.com",
+	];
+	const isAuthorizedForUserCount = authorizedEmails.includes(userEmail);
+	if (requestingUserCountPage && !isAuthorizedForUserCount) {
+		return NextResponse.redirect(frontEndUrl + "/signin");
+	}
 
 	if (requestingResetPasswordPage) {
 		const urlSearchParams = new URLSearchParams(search);

@@ -27,6 +27,7 @@ const AccountMenu = () => {
 			"christian.bourdeau94@gmail.com",
 			"alexis1895@gmail.com",
 			"censoredgreen@gmail.com",
+			"dcamarena0229@gmail.com",
 		];
 		const isAuthorizedForUserCount = authorizedEmails.includes(userEmail);
 		if (isAuthenticated && isAuthorizedForUserCount) {

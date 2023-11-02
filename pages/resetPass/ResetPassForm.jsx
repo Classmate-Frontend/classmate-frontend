@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Cookie from "js-cookie";
 
 import useWindowSize from "../../hooks/useWindowSize";
 import { useForm, FormProvider } from "react-hook-form";
@@ -27,8 +28,8 @@ export default function ResetPasswordForm() {
 	const { width: windowWidth } = useWindowSize();
 	const [errorMessage, setErrorMessage] = useState("");
 
-	const token = router.query.token;
-	const id = router.query.id;
+	const token = Cookie.get("token");
+	const id = Cookie.get("id");
 
 	const methods = useForm({
 		defaultValues: {
@@ -90,7 +91,7 @@ export default function ResetPasswordForm() {
 		if (!passwordError && !confirmPasswordError) {
 			setResetPasswordSent(true);
 			dispatch(removeAuthError());
-			dispatch(resetPassword({ newPassword, token, id }));
+			dispatch(resetPassword({ newPassword, confirmNewPassword, token, id }));
 		} else {
 			dispatch(setAuthError());
 		}

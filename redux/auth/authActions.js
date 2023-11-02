@@ -170,13 +170,18 @@ const resetRequestFailure = () => (dispatch) => {
 };
 
 export const resetPassword =
-	({ newPassword, token, id }) =>
+	({ newPassword, confirmNewPassword, token, id }) =>
 	async (dispatch) => {
 		dispatch(resetPasswordLoading());
 
 		try {
 			// Attempt to sign in with creditials given
-			await attemptResetPassword({ newPassword, token, id });
+			await attemptResetPassword({
+				newPassword,
+				confirmNewPassword,
+				token,
+				id,
+			});
 			dispatch(removeAuthError());
 			dispatch(resetPasswordSuccess());
 		} catch (err) {
@@ -190,13 +195,18 @@ export const resetPassword =
 		}
 	};
 
-const attemptResetPassword = ({ newPassword, token, id }) => {
+const attemptResetPassword = ({
+	newPassword,
+	confirmNewPassword,
+	token,
+	id,
+}) => {
 	const body = {
 		newPass: newPassword,
+		confirmPass: confirmNewPassword,
 		token: token,
 		userId: id,
 	};
-	console.log(body);
 	const header = {
 		headers: {
 			"content-type": "application/json",

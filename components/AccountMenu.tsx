@@ -29,6 +29,7 @@ const AccountMenu = () => {
 			"censoredgreen@gmail.com",
 			"dcamarena0229@gmail.com",
 		];
+
 		const isAuthorizedForUserCount = authorizedEmails.includes(userEmail);
 		if (isAuthenticated && isAuthorizedForUserCount) {
 			// Add an additional menu item when authorized

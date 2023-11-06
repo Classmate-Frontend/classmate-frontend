@@ -31,6 +31,7 @@ const AccountMenu = () => {
 		];
 
 		const isAuthorizedForUserCount = authorizedEmails.includes(userEmail);
+
 		if (isAuthenticated && isAuthorizedForUserCount) {
 			// Add an additional menu item when authorized
 			setMenuItems([

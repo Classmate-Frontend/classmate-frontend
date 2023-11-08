@@ -7,10 +7,12 @@ export default function PasswordInput({ name, label, rules, background }) {
 	const [showPassword, setShowPassword] = useState(false);
 	const [movePlaceHolder, setMovePlaceHolder] = useState(false);
 	const [changeLabelColor, setChangeLabelColor] = useState(false);
+	const [showPasswordToolTip, setShowPasswordToolTip] = useState(false);
 	const labelRef = useRef();
 	const { control } = useFormContext();
 
 	const hanldeInputFocus = () => {
+		setShowPasswordToolTip(true);
 		setChangeLabelColor(true);
 		if (!movePlaceHolder) {
 			setMovePlaceHolder(true);
@@ -18,6 +20,7 @@ export default function PasswordInput({ name, label, rules, background }) {
 	};
 
 	const hanldeInputBlur = (userInput) => {
+		setShowPasswordToolTip(false);
 		setChangeLabelColor(false);
 		if (!userInput) {
 			setMovePlaceHolder(false);
@@ -73,6 +76,41 @@ export default function PasswordInput({ name, label, rules, background }) {
 							alt="Icon of an eye used to toggle password visibility."
 						/>
 					</button>
+					{showPasswordToolTip && (
+						<div
+							style={{
+								boxShadow: "0px 0px 8px rgba(0,0,0,0.15)",
+							}}
+							className="font-classmate absolute top-[74px] z-10 flex w-full flex-col rounded-md bg-classmate-tan-2 p-5">
+							<p className="mb-2 text-classmate-green-6">
+								Password must contain the following:
+							</p>
+							<div className="flex items-center">
+								<span className="mr-2 rounded-full bg-classmate-error-red p-[4px]">
+									<Image
+										src="/xmark-solid.svg"
+										width={0}
+										height={0}
+										alt="exclamation mark"
+										className="filter-classmate-tan-2 h-[8px] w-[8px]"
+									/>
+								</span>
+								<span className="mr-2 rounded-full bg-classmate-green-2 p-[4px]">
+									<Image
+										src="/check-solid.svg"
+										width={0}
+										height={0}
+										alt="exclamation mark"
+										className="filter-classmate-tan-2 h-[8px] w-[8px]"
+									/>
+								</span>
+
+								<p className="text-classmate-error-red">
+									At least one uppercase letter
+								</p>
+							</div>
+						</div>
+					)}
 				</div>
 			)}
 		/>

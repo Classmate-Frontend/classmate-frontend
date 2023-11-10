@@ -44,7 +44,7 @@ export default function SignInForm() {
 	}
 
 	function validatePassword(password) {
-		const passwordRegex = `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,64}$`;
+		const passwordRegex = `^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,64}$`;
 		return !password.match(passwordRegex);
 	}
 
@@ -103,6 +103,7 @@ export default function SignInForm() {
 						name="password"
 						label="Password"
 						background="bg-classmate-tan-2"
+						tooltip={false}
 						rules={{
 							required: true,
 						}}

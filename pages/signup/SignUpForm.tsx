@@ -48,26 +48,24 @@ export default function SignUpForm() {
 	}
 
 	function validatePassword(password) {
-		const oneUpper = "(?=.*?[A-Z])";
-		const oneLower = "(?=.*?[a-z])";
-		const oneDigit = "(?=.*?[0-9])";
-		const oneSpecial = "(?=.*?[#?!@$%^&*-])";
+		const oneUpper = "(?=.*[A-Z])";
+		const oneLower = "(?=.*[a-z])";
+		const oneDigit = "(?=.*\\d)";
 		const minChar = ".{8,}";
 		const maxChar = ".{8,64}";
 
 		let errorMessage = "";
+
 		if (!password.match(minChar)) {
-			errorMessage = "password must contain at least 8 characters";
+			errorMessage = "Password must contain at least 8 characters";
 		} else if (!password.match(maxChar)) {
-			errorMessage = "password must contain at most 64 characters";
+			errorMessage = "Password must contain at most 64 characters";
 		} else if (!password.match(oneUpper)) {
-			errorMessage = "password must contain one uppercase character";
+			errorMessage = "Password must contain at least one uppercase character";
 		} else if (!password.match(oneLower)) {
-			errorMessage = "password must contain one lowercase character";
+			errorMessage = "Password must contain at least one lowercase character";
 		} else if (!password.match(oneDigit)) {
-			errorMessage = "password must contain one digit";
-		} else if (!password.match(oneSpecial)) {
-			errorMessage = "password must contain one special character";
+			errorMessage = "Password must contain at least one digit";
 		}
 
 		if (errorMessage) {

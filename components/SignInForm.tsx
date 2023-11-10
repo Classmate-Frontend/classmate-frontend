@@ -44,7 +44,7 @@ export default function SignInForm() {
 	}
 
 	function validatePassword(password) {
-		const passwordRegex = `^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,64}$`;
+		const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,64}$/;
 		return !password.match(passwordRegex);
 	}
 
@@ -60,6 +60,7 @@ export default function SignInForm() {
 		email = email.toLowerCase();
 		const emailError = validateEmail(email);
 		const passwordError = validatePassword(password);
+		console.log(emailError, passwordError);
 
 		if (!emailError && !passwordError) {
 			dispatch(signIn({ email, password }));
